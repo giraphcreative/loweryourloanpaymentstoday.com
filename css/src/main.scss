@@ -4,8 +4,9 @@
 $yellow: #F3C25B;
 $teal: #83BAB2;
 $green: #8B9E74;
-$red: #831528;
+$red: #c22032;
 $grey: #414042;
+$navy: #1E376C;
 
 
 @import "reset";
@@ -34,20 +35,30 @@ $grey: #414042;
 // header styles
 header {
 	position: relative;
-	background: url(../img/bg-header.jpg) center center no-repeat;
+	background: url(../img/bg-head.jpg) bottom center no-repeat;
 	background-size: cover;
-	padding: 25px 0;
-	border-bottom: 25px solid $red;
+	padding-bottom: 5px;
+}
+
+
+
+.subhead {
+	background: url(../img/bg-subhead.jpg) center center no-repeat;
+	background-size: cover;
+	padding: 4px 0 0;
+	border-bottom: 20px solid $navy;
 
 	@include respond-to( 768px ) {
-		padding: 50px 0;
+		padding: 14px 0 10px;
+		border-bottom: 30px solid $navy;
 	}
 }
 
 
+
 // wrap div
 .wrap {
-	max-width: 1100px;
+	max-width: 1000px;
 	margin: 0 auto;
 	position: relative;
 	@include clearfix;
@@ -55,139 +66,66 @@ header {
 
 
 
-// padding div that'll resize for larger screens.
-.pad {
-	padding: 30px 20px;
+.main-content {
+	padding: 20px;
+	font-size: 20px;
+	line-height: 28px;
 
-	@include respond-to( 768px ) { padding: 30px 50px; }
-	@include respond-to( 1025px ) { padding: 40px 70px; }
-}
-
-
-
-// tool styles
-.tool {
-	padding: 0;
-	text-align: center;
-	
-	@include respond-to( 768px ) {
-		padding: 20px 40px;
+	h2, p {
+		padding: 10px 0;
 	}
 
-	.calculator {
-		background: url(../img/bg-box.png);
-		color: white;
-		padding: 20px 15px 30px;
-		margin-top: 30px;
-		@include font-title;
-
-		button, input[type=submit], .btn {
-			width: 100%;
-			margin: 0 auto;
-		}
-		
-		@include respond-to( 768px ) { 
-			padding: 30px 20px 40px; 
-			border-radius: 20px;
-			font-size: 1.2em;
-		}
-
-		@include respond-to( 1024px ) {
-			padding: 40px;
-		}
-	}
-
-	.half.right.first {
-		padding: 30px 10px;
-
-		@include respond-to( 1024px ) {
-			padding: 30px;
-		}
-	}
-}
-
-
-
-// results styles
-.results {
-	display: none;
-	text-align: center;
-	@extend .pad;
-
-	// large title
 	h2 {
-		@include font;
+		font-size: 20px;
+		line-height: 28px;
+		@include font-bold;
 		color: $red;
-		font-size: 1.8em;
-
-		@include respond-to( 768px ) {
-			font-size: 3em;
-			padding: 10px 20px;
-		}
 	}
 
-	h3 {
-		@include font;
-		font-size: 1.5em;
+	@include respond-to( 768px ) {
+		padding: 40px 120px;
+		font-size: 28px;
+		line-height: 40px;
 
-		@include respond-to( 768px ) {
-			font-size: 2em;
-			padding: 10px 20px;
+		h2 {
+			font-size: 28px;
+			line-height: 40px;
+		}
+
+		h2, p {
+			padding: 20px 0;
 		}
 	}
+}
 
-	p {
-		@include font-title;
-		font-size: 1.5em;
-		line-height: 1.5em;
 
-		@include respond-to( 768px ) {
-			font-size: 2em;
-			padding: 50px 20px 10px;
-		}
-	}
+
+.button {
+	background: $red;
+	color: white;
+	padding: 20px;
+	display: inline-block;
+	border-radius: 20px;
+}
+
+
+
+.footer-bar {
+	background: url(../img/border-footer.png) center center no-repeat;
+	background-size: cover;
+	height: 45px;
+	border-top: 4px solid lighten( $grey, 20% );
+	box-shadow: 0 7px 7px rgba( $grey, .4 );
 }
 
 
 
 // footer styles
-.footer-bar {
-	border-top: 10px solid $grey;
+footer {
 	color: $grey;
 	padding: 30px 20px;
 	text-align: center;
-
-	h2, h4 {
-		&, a {
-			color: $red;
-		}
-
-		@include font-title;
-	}
-
-	h2 {
-		font-size: 3em;
-		@include respond-to( 768px ) { font-size: 3.5em; }
-	}
-
-	h4 {
-		font-size: 17px;
-		@include respond-to( 800px ) { font-size: 26px; }
-	}
-
-	.sixty, .fourty {
-		text-align: center;
-	}
-
-	@include respond-to( 768px ) {
-		margin-top: 30px;
-	}
-
-	.half.separator {
-		@include respond-to( 768px ) {
-			width: 46.5%;
-		}
-	}
+	@include clearfix;
 }
 
 
@@ -196,11 +134,6 @@ header {
 	padding: 20px 0 0;
 	font-size: .85em;
 	line-height: 1.3em;
-	text-align: left;
-
-	img {
-		float: right;
-		margin: 0 0 15px 15px;
-	}
+	text-align: right;
 }
 
