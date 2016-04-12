@@ -37,20 +37,10 @@ header {
 	position: relative;
 	background: url(../img/bg-head.jpg) bottom center no-repeat;
 	background-size: cover;
-	padding-bottom: 5px;
-}
-
-
-
-.subhead {
-	background: url(../img/bg-subhead.jpg) center center no-repeat;
-	background-size: cover;
-	padding: 4px 0 0;
 	border-bottom: 20px solid $navy;
 
-	@include respond-to( 768px ) {
-		padding: 14px 0 10px;
-		border-bottom: 30px solid $navy;
+	img {
+		display: block;
 	}
 }
 
